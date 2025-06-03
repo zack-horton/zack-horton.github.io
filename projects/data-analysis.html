@@ -1,72 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data Analysis Project | Portfolio</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="project-template.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="project_styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <button class="back-button" onclick="window.location.href='../'">
-        <i class="fas fa-arrow-left"></i>
+      <i class="fas fa-arrow-left"></i>
     </button>
 
     <header class="project-header">
-        <div class="container">
-            <h1 class="project-title">Data Analysis Project</h1>
-            <div class="project-links">
-                <!-- Links will be populated by JavaScript -->
-            </div>
+      <div class="container">
+        <h1 class="project-title"></h1>
+        <div class="project-links">
+          <!-- Links will be populated dynamically -->
         </div>
+      </div>
     </header>
 
     <main class="project-content">
-        <div class="container">
-            <section class="project-section">
-                <h2>Overview</h2>
-                <div class="project-description">
-                    <!-- Description will be populated by JavaScript -->
-                </div>
-            </section>
+      <div class="container">
+        <section class="project-section">
+          <h2>Overview</h2>
+          <div class="project-description">
+            <!-- Project description will be populated dynamically -->
+          </div>
+        </section>
 
-            <section class="project-section">
-                <h2>Technologies Used</h2>
-                <div class="tech-stack">
-                    <!-- Tech stack will be populated by JavaScript -->
-                </div>
-            </section>
+        <section class="project-section">
+          <h2>Technologies Used</h2>
+          <div class="tech-stack">
+            <!-- Tech stack will be populated dynamically -->
+          </div>
+        </section>
 
-            <section class="project-section">
-                <h2>Presentation</h2>
-                <div class="pdf-container">
-                    <!-- PDF will be embedded by JavaScript -->
-                </div>
-            </section>
+        <section class="project-section">
+          <h2>Collaborators</h2>
+          <div class="collaborators">
+            <!-- Collaborators will be populated dynamically -->
+          </div>
+        </section>
 
-            <section class="project-section">
-                <h2>Collaborators</h2>
-                <div class="collaborators">
-                    <!-- Collaborators will be populated by JavaScript -->
-                </div>
-            </section>
+        <section class="project-section">
+          <h2>Project Demo</h2>
+          <div class="demo-section">
+            <div class="video-container">
+              <!-- Video will be embedded here -->
+            </div>
+          </div>
+        </section>
 
-            <section class="project-section">
-                <h2>Additional Resources</h2>
-                <div class="additional-links">
-                    <!-- Additional links will be populated by JavaScript -->
-                </div>
-            </section>
-        </div>
+        <section class="project-section">
+          <h2>Presentation</h2>
+          <div class="presentation-section">
+            <div class="pdf-container">
+              <!-- PDF will be embedded here -->
+            </div>
+            <div class="pdf-controls">
+              <button class="download-btn" id="presentation-download">
+                <i class="fas fa-download"></i> Download Presentation
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <h2>Project Report</h2>
+          <div class="report-section">
+            <div class="pdf-container" id="report-container">
+              <!-- Report PDF will be embedded here -->
+            </div>
+            <div class="pdf-controls">
+              <button class="download-btn" id="report-download">
+                <i class="fas fa-download"></i> Download Report
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; <span id="current-year">2025</span> | Built with ❤️</p>
-        </div>
+      <div class="container">
+        <p>
+          &copy; Copyright <span id="current-year">2025</span> | Zachary Horton
+        </p>
+      </div>
     </footer>
 
-    <script src="project-template.js"></script>
-</body>
+    <script src="dynamic.js"></script>
+  </body>
 </html>

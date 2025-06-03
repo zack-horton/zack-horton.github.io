@@ -1,6 +1,35 @@
 // Update copyright year
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
+// Resume URL
+const resumeUrl = 'https://raw.githubusercontent.com/zack-horton/Project-Portfolio/main/Zack%20Horton%20-%20Resume.pdf';
+
+// Function to get Google Docs Viewer URL
+function getGoogleDocsViewerUrl(pdfUrl) {
+    return `https://docs.google.com/viewer?embedded=true&url=${encodeURIComponent(pdfUrl)}`;
+}
+
+// Initialize resume viewer
+document.addEventListener('DOMContentLoaded', () => {
+    const aboutImage = document.querySelector('.about-image');
+    if (aboutImage) {
+        aboutImage.innerHTML = `
+            <div class="resume-container">
+                <iframe src="${getGoogleDocsViewerUrl(resumeUrl)}" frameborder="0"></iframe>
+                <button class="download-resume-btn">
+                    <i class="fas fa-download"></i> Download Resume
+                </button>
+            </div>
+        `;
+
+        // Add download button functionality
+        const downloadBtn = aboutImage.querySelector('.download-resume-btn');
+        downloadBtn.addEventListener('click', () => {
+            window.open(resumeUrl, '_blank');
+        });
+    }
+});
+
 // Mobile menu functionality
 const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
@@ -37,10 +66,8 @@ window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
     if (scrollTop > lastScrollTop) {
-        // Scrolling down
         navbar.style.transform = 'translateY(-100%)';
     } else {
-        // Scrolling up
         navbar.style.transform = 'translateY(0)';
     }
     
@@ -53,218 +80,14 @@ const projects = [
         id: 'data-analysis',
         title: 'Data Analysis Project',
         description: 'Statistical analysis and visualization of large datasets',
-        tags: ['Python', 'Pandas', 'Matplotlib'],
-        image: 'placeholder.jpg',
-        fullDescription: 'Detailed project description goes here...',
-        githubUrl: 'https://github.com/username/project',
-        linkedinUrl: 'https://linkedin.com/in/username/detail/project',
-        presentationUrl: 'https://raw.githubusercontent.com/username/project/main/presentation.pdf',
         technologies: [
+            { name: 'Python', icon: 'python.svg' },
             { name: 'Python', icon: 'python.svg' },
             { name: 'Pandas', icon: 'pandas.svg' },
             { name: 'Matplotlib', icon: 'matplotlib.svg' }
         ],
-        collaborators: [
-            {
-                name: 'John Doe',
-                role: 'Data Scientist',
-                linkedinUrl: 'https://linkedin.com/in/johndoe',
-                image: 'john-doe.jpg'
-            }
-        ],
-        additionalLinks: [
-            {
-                title: 'Project Demo',
-                url: 'https://demo.example.com'
-            }
-        ]
-    },
-    // Add more projects here...
-    {
-        id: 'data-analysis',
-        title: 'Data Analysis Project',
-        description: 'Statistical analysis and visualization of large datasets',
-        tags: ['Python', 'Pandas', 'Matplotlib'],
-        image: 'placeholder.jpg',
-        fullDescription: 'Detailed project description goes here...',
-        githubUrl: 'https://github.com/username/project',
-        linkedinUrl: 'https://linkedin.com/in/username/detail/project',
-        presentationUrl: 'https://raw.githubusercontent.com/username/project/main/presentation.pdf',
-        technologies: [
-            { name: 'Python', icon: 'python.svg' },
-            { name: 'Pandas', icon: 'pandas.svg' },
-            { name: 'Matplotlib', icon: 'matplotlib.svg' }
-        ],
-        collaborators: [
-            {
-                name: 'John Doe',
-                role: 'Data Scientist',
-                linkedinUrl: 'https://linkedin.com/in/johndoe',
-                image: 'john-doe.jpg'
-            }
-        ],
-        additionalLinks: [
-            {
-                title: 'Project Demo',
-                url: 'https://demo.example.com'
-            }
-        ]
-    },
-    // Add more projects here...
-    {
-        id: 'data-analysis',
-        title: 'Data Analysis Project',
-        description: 'Statistical analysis and visualization of large datasets',
-        tags: ['Python', 'Pandas', 'Matplotlib'],
-        image: 'placeholder.jpg',
-        fullDescription: 'Detailed project description goes here...',
-        githubUrl: 'https://github.com/username/project',
-        linkedinUrl: 'https://linkedin.com/in/username/detail/project',
-        presentationUrl: 'https://raw.githubusercontent.com/username/project/main/presentation.pdf',
-        technologies: [
-            { name: 'Python', icon: 'python.svg' },
-            { name: 'Pandas', icon: 'pandas.svg' },
-            { name: 'Matplotlib', icon: 'matplotlib.svg' }
-        ],
-        collaborators: [
-            {
-                name: 'John Doe',
-                role: 'Data Scientist',
-                linkedinUrl: 'https://linkedin.com/in/johndoe',
-                image: 'john-doe.jpg'
-            }
-        ],
-        additionalLinks: [
-            {
-                title: 'Project Demo',
-                url: 'https://demo.example.com'
-            }
-        ]
-    },
-    // Add more projects here...
-    {
-        id: 'data-analysis',
-        title: 'Data Analysis Project',
-        description: 'Statistical analysis and visualization of large datasets',
-        tags: ['Python', 'Pandas', 'Matplotlib'],
-        image: 'placeholder.jpg',
-        fullDescription: 'Detailed project description goes here...',
-        githubUrl: 'https://github.com/username/project',
-        linkedinUrl: 'https://linkedin.com/in/username/detail/project',
-        presentationUrl: 'https://raw.githubusercontent.com/username/project/main/presentation.pdf',
-        technologies: [
-            { name: 'Python', icon: 'python.svg' },
-            { name: 'Pandas', icon: 'pandas.svg' },
-            { name: 'Matplotlib', icon: 'matplotlib.svg' }
-        ],
-        collaborators: [
-            {
-                name: 'John Doe',
-                role: 'Data Scientist',
-                linkedinUrl: 'https://linkedin.com/in/johndoe',
-                image: 'john-doe.jpg'
-            }
-        ],
-        additionalLinks: [
-            {
-                title: 'Project Demo',
-                url: 'https://demo.example.com'
-            }
-        ]
-    },
-    // Add more projects here...
-    {
-        id: 'data-analysis',
-        title: 'Data Analysis Project',
-        description: 'Statistical analysis and visualization of large datasets',
-        tags: ['Python', 'Pandas', 'Matplotlib'],
-        image: 'placeholder.jpg',
-        fullDescription: 'Detailed project description goes here...',
-        githubUrl: 'https://github.com/username/project',
-        linkedinUrl: 'https://linkedin.com/in/username/detail/project',
-        presentationUrl: 'https://raw.githubusercontent.com/username/project/main/presentation.pdf',
-        technologies: [
-            { name: 'Python', icon: 'python.svg' },
-            { name: 'Pandas', icon: 'pandas.svg' },
-            { name: 'Matplotlib', icon: 'matplotlib.svg' }
-        ],
-        collaborators: [
-            {
-                name: 'John Doe',
-                role: 'Data Scientist',
-                linkedinUrl: 'https://linkedin.com/in/johndoe',
-                image: 'john-doe.jpg'
-            }
-        ],
-        additionalLinks: [
-            {
-                title: 'Project Demo',
-                url: 'https://demo.example.com'
-            }
-        ]
-    },
-    // Add more projects here...
-    {
-        id: 'data-analysis',
-        title: 'Data Analysis Project',
-        description: 'Statistical analysis and visualization of large datasets',
-        tags: ['Python', 'Pandas', 'Matplotlib'],
-        image: 'placeholder.jpg',
-        fullDescription: 'Detailed project description goes here...',
-        githubUrl: 'https://github.com/username/project',
-        linkedinUrl: 'https://linkedin.com/in/username/detail/project',
-        presentationUrl: 'https://raw.githubusercontent.com/username/project/main/presentation.pdf',
-        technologies: [
-            { name: 'Python', icon: 'python.svg' },
-            { name: 'Pandas', icon: 'pandas.svg' },
-            { name: 'Matplotlib', icon: 'matplotlib.svg' }
-        ],
-        collaborators: [
-            {
-                name: 'John Doe',
-                role: 'Data Scientist',
-                linkedinUrl: 'https://linkedin.com/in/johndoe',
-                image: 'john-doe.jpg'
-            }
-        ],
-        additionalLinks: [
-            {
-                title: 'Project Demo',
-                url: 'https://demo.example.com'
-            }
-        ]
-    },
-    // Add more projects here...
-    {
-        id: 'data-analysis',
-        title: 'Data Analysis Project',
-        description: 'Statistical analysis and visualization of large datasets',
-        tags: ['Python', 'Pandas', 'Matplotlib'],
-        image: 'placeholder.jpg',
-        fullDescription: 'Detailed project description goes here...',
-        githubUrl: 'https://github.com/username/project',
-        linkedinUrl: 'https://linkedin.com/in/username/detail/project',
-        presentationUrl: 'https://raw.githubusercontent.com/username/project/main/presentation.pdf',
-        technologies: [
-            { name: 'Python', icon: 'python.svg' },
-            { name: 'Pandas', icon: 'pandas.svg' },
-            { name: 'Matplotlib', icon: 'matplotlib.svg' }
-        ],
-        collaborators: [
-            {
-                name: 'John Doe',
-                role: 'Data Scientist',
-                linkedinUrl: 'https://linkedin.com/in/johndoe',
-                image: 'john-doe.jpg'
-            }
-        ],
-        additionalLinks: [
-            {
-                title: 'Project Demo',
-                url: 'https://demo.example.com'
-            }
-        ]
-    },
+        image: 'images/projects/python.svg'
+    }
     // Add more projects here...
 ];
 
@@ -277,13 +100,18 @@ function createProjectCard(project) {
     card.href = `projects/${project.id}.html`;
     card.innerHTML = `
         <div class="project-image">
-            <div class="placeholder-image"></div>
+            <img src="${project.image}" alt="${project.title}" class="project-thumbnail">
         </div>
         <div class="project-info">
             <h3>${project.title}</h3>
             <p>${project.description}</p>
-            <div class="project-tags">
-                ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join(' | ')}
+            <div class="tech-stack">
+                ${project.technologies.map(tech => `
+                    <div class="tech-icon">
+                        <img src="images/tech-icons/${tech.icon}" alt="${tech.name}">
+                        <span>${tech.name}</span>
+                    </div>
+                `).join(' ')}
             </div>
         </div>
     `;
